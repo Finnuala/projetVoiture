@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Symfony\src\Entity\Voiture;
 
 use Doctrine\ORM\Mapping as ORM;
 
