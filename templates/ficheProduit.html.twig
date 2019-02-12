@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Fiche Voiture{% endblock %}</title>
+    {% block stylesheets %}
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('dist/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('dist/css/modern-business.css') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+        <img src="{{ asset('dist/img/porsche.jpg') }}">
+        <li>Numéro de série : {{ NumSerie }}L/100</li>
+        <li>Plaque d'immatriculation : {{ Immatriculation }}</li>
+        <li>Puissance Fiscale : {{ PuissanceFiscale }}L/100</li>
+        <li>Puissance Reelle : {{ PuissanceReelle }}</li>
+        <li>Emission : {{ Emission }}</li>
+        <li>Date de Mise en Circulation : {{ DateMec }}</li>
+        <li>Consommation : {{ ConsommationAuCent }}L/100</li>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>
