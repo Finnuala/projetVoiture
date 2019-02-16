@@ -43,10 +43,16 @@
         <div class="infovoiture col-lg-5">
             <h1>Mercedes classe S</h1>
             <div class="row infovoiture2">
-                <ul class="col-lg-3 item_station"><h4><i class="fas fa-charging-station"></i> Essence</h4></ul>
-                <ul class="col-lg-3 item_calendar"><h4><i class="fas fa-calendar-week"></i> 24/02/2018</h4></ul>
-                <ul class="col-lg-3 item_road"><h4><i class="fas fa-road"></i> 18000km</h4></ul>
-                <ul class="col-lg-3 item_contract"><h4><i class="fas fa-file-contract"></i> Avec garantie</h4></ul>
+                <ul class="col-lg-3 item_station"><h4><i class="fas fa-charging-station"></i> {{ Carburant }}</h4></ul>
+                <ul class="col-lg-3 item_calendar"><h4><i class="fas fa-calendar-week"></i> {{ Date_Mec|date('d-m-Y') }}</h4></ul>
+                <ul class="col-lg-3 item_road"><h4><i class="fas fa-road"></i> {{ Kilometrage }} km</h4></ul>
+                <ul class="col-lg-3 item_contract"><h4><i class="fas fa-file-contract"></i>
+                       {% if Garantie == 0 %}
+                        Sans garantie
+                        {% else %}
+                        {{ Garantie }} ans
+                        {% endif %}
+                    </h4></ul>
             </div>
             <br>
             <div class="equipements">

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-=======
   <component name="FUSUsageTrigger">
     <session id="619991158">
       <usages-collector id="statistics.php.composer.actions">
@@ -13,7 +11,6 @@
       </usages-collector>
     </session>
   </component>
->>>>>>> 0fb0b459ef2b32a9067ee87ee8768a12071e0432
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>

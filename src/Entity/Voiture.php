@@ -1,8 +1,9 @@
 <?php
 
-namespace Symfony\src\Entity\Voiture;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Typecarburant;
 
 /**
  * Voiture
@@ -22,11 +23,43 @@ class Voiture
     private $numSerie;
 
     /**
+     * @return int
+     */
+    public function getNumSerie(): int
+    {
+        return $this->numSerie;
+    }
+
+    /**
+     * @param int $numSerie
+     */
+    public function setNumSerie(int $numSerie): void
+    {
+        $this->numSerie = $numSerie;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="immatriculation", type="string", length=9, nullable=true)
      */
     private $immatriculation;
+
+    /**
+     * @return string|null
+     */
+    public function getImmatriculation(): ?string
+    {
+        return $this->immatriculation;
+    }
+
+    /**
+     * @param string|null $immatriculation
+     */
+    public function setImmatriculation(?string $immatriculation): void
+    {
+        $this->immatriculation = $immatriculation;
+    }
 
     /**
      * @var string|null
@@ -36,11 +69,43 @@ class Voiture
     private $kilometrage;
 
     /**
+     * @return string|null
+     */
+    public function getKilometrage(): ?string
+    {
+        return $this->kilometrage;
+    }
+
+    /**
+     * @param string|null $kilometrage
+     */
+    public function setKilometrage(?string $kilometrage): void
+    {
+        $this->kilometrage = $kilometrage;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="libelle", type="string", length=255, nullable=true)
      */
     private $libelle;
+
+    /**
+     * @return string|null
+     */
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * @param string|null $libelle
+     */
+    public function setLibelle(?string $libelle): void
+    {
+        $this->libelle = $libelle;
+    }
 
     /**
      * @var \DateTime|null
@@ -50,11 +115,43 @@ class Voiture
     private $dateMec;
 
     /**
+     * @return \DateTime|null
+     */
+    public function getDateMec(): ?\DateTime
+    {
+        return $this->dateMec;
+    }
+
+    /**
+     * @param \DateTime|null $dateMec
+     */
+    public function setDateMec(?\DateTime $dateMec): void
+    {
+        $this->dateMec = $dateMec;
+    }
+
+    /**
      * @var int|null
      *
      * @ORM\Column(name="garantie", type="integer", nullable=true)
      */
     private $garantie;
+
+    /**
+     * @return int|null
+     */
+    public function getGarantie(): ?int
+    {
+        return $this->garantie;
+    }
+
+    /**
+     * @param int|null $garantie
+     */
+    public function setGarantie(?int $garantie): void
+    {
+        $this->garantie = $garantie;
+    }
 
     /**
      * @var int|null
@@ -64,11 +161,43 @@ class Voiture
     private $prix;
 
     /**
+     * @return int|null
+     */
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    /**
+     * @param int|null $prix
+     */
+    public function setPrix(?int $prix): void
+    {
+        $this->prix = $prix;
+    }
+
+    /**
      * @var int|null
      *
      * @ORM\Column(name="puissance_fiscale", type="integer", nullable=true)
      */
     private $puissanceFiscale;
+
+    /**
+     * @return int|null
+     */
+    public function getPuissanceFiscale(): ?int
+    {
+        return $this->puissanceFiscale;
+    }
+
+    /**
+     * @param int|null $puissanceFiscale
+     */
+    public function setPuissanceFiscale(?int $puissanceFiscale): void
+    {
+        $this->puissanceFiscale = $puissanceFiscale;
+    }
 
     /**
      * @var int|null
@@ -78,11 +207,43 @@ class Voiture
     private $puissanceReelle;
 
     /**
+     * @return int|null
+     */
+    public function getPuissanceReelle(): ?int
+    {
+        return $this->puissanceReelle;
+    }
+
+    /**
+     * @param int|null $puissanceReelle
+     */
+    public function setPuissanceReelle(?int $puissanceReelle): void
+    {
+        $this->puissanceReelle = $puissanceReelle;
+    }
+
+    /**
      * @var int|null
      *
      * @ORM\Column(name="concommation_au_cent", type="integer", nullable=true)
      */
     private $concommationAuCent;
+
+    /**
+     * @return int|null
+     */
+    public function getConcommationAuCent(): ?int
+    {
+        return $this->concommationAuCent;
+    }
+
+    /**
+     * @param int|null $concommationAuCent
+     */
+    public function setConcommationAuCent(?int $concommationAuCent): void
+    {
+        $this->concommationAuCent = $concommationAuCent;
+    }
 
     /**
      * @var int|null
@@ -92,6 +253,22 @@ class Voiture
     private $emission;
 
     /**
+     * @return int|null
+     */
+    public function getEmission(): ?int
+    {
+        return $this->emission;
+    }
+
+    /**
+     * @param int|null $emission
+     */
+    public function setEmission(?int $emission): void
+    {
+        $this->emission = $emission;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="controle_technique", type="string", length=255, nullable=true)
@@ -99,11 +276,43 @@ class Voiture
     private $controleTechnique;
 
     /**
+     * @return string|null
+     */
+    public function getControleTechnique(): ?string
+    {
+        return $this->controleTechnique;
+    }
+
+    /**
+     * @param string|null $controleTechnique
+     */
+    public function setControleTechnique(?string $controleTechnique): void
+    {
+        $this->controleTechnique = $controleTechnique;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="suivi_entretien", type="string", length=255, nullable=true)
      */
     private $suiviEntretien;
+
+    /**
+     * @return string|null
+     */
+    public function getSuiviEntretien(): ?string
+    {
+        return $this->suiviEntretien;
+    }
+
+    /**
+     * @param string|null $suiviEntretien
+     */
+    public function setSuiviEntretien(?string $suiviEntretien): void
+    {
+        $this->suiviEntretien = $suiviEntretien;
+    }
 
     /**
      * @var \Typevoiture
@@ -116,6 +325,22 @@ class Voiture
     private $idTypeVoiture;
 
     /**
+     * @return \Typevoiture
+     */
+    public function getIdTypeVoiture(): \Typevoiture
+    {
+        return $this->idTypeVoiture;
+    }
+
+    /**
+     * @param \Typevoiture $idTypeVoiture
+     */
+    public function setIdTypeVoiture(\Typevoiture $idTypeVoiture): void
+    {
+        $this->idTypeVoiture = $idTypeVoiture;
+    }
+
+    /**
      * @var \Marque
      *
      * @ORM\ManyToOne(targetEntity="Marque")
@@ -126,6 +351,22 @@ class Voiture
     private $idMarque;
 
     /**
+     * @return \Marque
+     */
+    public function getIdMarque(): \Marque
+    {
+        return $this->idMarque;
+    }
+
+    /**
+     * @param \Marque $idMarque
+     */
+    public function setIdMarque(\Marque $idMarque): void
+    {
+        $this->idMarque = $idMarque;
+    }
+
+    /**
      * @var \Typecarburant
      *
      * @ORM\ManyToOne(targetEntity="Typecarburant")
@@ -134,6 +375,22 @@ class Voiture
      * })
      */
     private $idTypeCarburant;
+
+    /**
+     * @return \Typecarburant
+     */
+    public function getIdTypeCarburant(): \Typecarburant
+    {
+        return $this->idTypeCarburant;
+    }
+
+    /**
+     * @param \Typecarburant $idTypeCarburant
+     */
+    public function setIdTypeCarburant(\Typecarburant $idTypeCarburant): void
+    {
+        $this->idTypeCarburant = $idTypeCarburant;
+    }
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -149,6 +406,22 @@ class Voiture
      * )
      */
     private $idEquipement;
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdEquipement(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->idEquipement;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $idEquipement
+     */
+    public function setIdEquipement(\Doctrine\Common\Collections\Collection $idEquipement): void
+    {
+        $this->idEquipement = $idEquipement;
+    }
 
     /**
      * Constructor
