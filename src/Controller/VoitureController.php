@@ -8,7 +8,7 @@
 
 namespace App\Controller;
 
-use MongoDB\BSON\Type;
+use App\Entity\Equipement;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,17 +16,50 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query;
 use App\Entity\Voiture;
 use App\Entity\Typecarburant;
-use Doctrine\Common\Util\ClassUtils;
 
 class VoitureController extends AbstractController
 {
+    //Function to find the car with it Id
+    public function findByIdCar($numSerie){
+        /*$sql = "
+        SELECT *
+          FROM voitures_view
+          WHERE num_serie = 123456789
+    ";
 
-    public function findByCarburantTypeForCar(){
-       $entityManager = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();*/
 
-       $query = $entityManager->createQuery('SELECT libelle FROM typecarburant WHERE id_type_carburant = (SELECT voiture.id_type_carburant FROM voiture WHERE num_serie = 123456789)');
+        $repository = $this->getDoctrine()->getRepository(Voiture::class);
 
-       return $query->execute();
+        $voiture = $repository->findOneBy([
+            'numSerie' => $numSerie
+        ]);
+
+        return $voiture;
+    }
+
+    //Function to find the car with id IdTypeCarburant
+    public function findByIdTypeCarburantForCar($idTypeCarburant){
+        $repository = $this->getDoctrine()->getRepository(Typecarburant::class);
+
+        $typeCarburant = $repository->findOneBy([
+            'idTypeCarburant' => $idTypeCarburant,
+        ]);
+
+        return $typeCarburant;
+    }
+
+    public function findByIdEquipementForCar($idEquipement){
+        $repository = $this->getDoctrine()->getRepository(Equipement::class);
+
+        $equipement = $repository->findOneBy([
+            'idTypeCarburant' => $idEquipement,
+        ]);
+
+        return $equipement;
     }
 
     /**
@@ -35,17 +68,8 @@ class VoitureController extends AbstractController
      */
     public function show()
     {
-        $repository = $this->getDoctrine()->getRepository(Voiture::class);
-
-        $voiture = $repository->findOneBy(['kilometrage' => '105000']);
-
-        $realClassName = Doctrine\Common\Util\ClassUtils::getRealClass($object);
-
-        $carburant = $this->getDoctrine()->getRepository(Typecarburant::class)->findBy([
-            'id_type_carburant' => ClassUtils::getRealClass($voiture->getIdTypeCarburant()),
-        ]);
-
-
+        $voiture = $this->findByIdCar('123456789');
+        $typeCarburant = $this->findByIdTypeCarburantForCar($voiture->getIdTypeCarburant());
 
         return $this->render(
             'ficheProduit.html.twig',
@@ -59,11 +83,11 @@ class VoitureController extends AbstractController
                 'Prix' => $voiture->getPrix(),
                 'Puissance_Fiscale' => $voiture->getPuissanceFiscale(),
                 'Puissance_Reelle' => $voiture->getPuissanceReelle(),
-                'Consommation_Au_Cent' => $voiture->getConcommationAuCent(),
+                'Consommation_Au_Cent' => $voiture->getConsommationAuCent(),
                 'Emission' => $voiture->getEmission(),
                 'Controle_Technique' => $voiture->getControleTechnique(),
                 'Suivi_Entretien' => $voiture->getSuiviEntretien(),
-                'Carburant' => $carburant->getLibelle(),
+                'Carburant' => $typeCarburant->getLibelle(),
             ]);
     }
 }

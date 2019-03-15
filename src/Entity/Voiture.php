@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Typecarburant;
+use App\Entity\Typevoiture;
 
 /**
  * Voiture
@@ -225,24 +226,24 @@ class Voiture
     /**
      * @var int|null
      *
-     * @ORM\Column(name="concommation_au_cent", type="integer", nullable=true)
+     * @ORM\Column(name="consommation_au_cent", type="integer", nullable=true)
      */
-    private $concommationAuCent;
+    private $consommationAuCent;
 
     /**
      * @return int|null
      */
-    public function getConcommationAuCent(): ?int
+    public function getconsommationAuCent(): ?int
     {
-        return $this->concommationAuCent;
+        return $this->consommationAuCent;
     }
 
     /**
-     * @param int|null $concommationAuCent
+     * @param int|null $consommationAuCent
      */
-    public function setConcommationAuCent(?int $concommationAuCent): void
+    public function setconsommationAuCent(?int $consommationAuCent): void
     {
-        $this->concommationAuCent = $concommationAuCent;
+        $this->consommationAuCent = $consommationAuCent;
     }
 
     /**
@@ -315,7 +316,7 @@ class Voiture
     }
 
     /**
-     * @var \Typevoiture
+     * @var Typevoiture
      *
      * @ORM\ManyToOne(targetEntity="Typevoiture")
      * @ORM\JoinColumns({
@@ -325,23 +326,23 @@ class Voiture
     private $idTypeVoiture;
 
     /**
-     * @return \Typevoiture
+     * @return Typevoiture
      */
-    public function getIdTypeVoiture(): \Typevoiture
+    public function getIdTypeVoiture(): Typevoiture
     {
         return $this->idTypeVoiture;
     }
 
     /**
-     * @param \Typevoiture $idTypeVoiture
+     * @param Typevoiture $idTypeVoiture
      */
-    public function setIdTypeVoiture(\Typevoiture $idTypeVoiture): void
+    public function setIdTypeVoiture(Typevoiture $idTypeVoiture): void
     {
         $this->idTypeVoiture = $idTypeVoiture;
     }
 
     /**
-     * @var \Marque
+     * @var Marque
      *
      * @ORM\ManyToOne(targetEntity="Marque")
      * @ORM\JoinColumns({
@@ -351,23 +352,23 @@ class Voiture
     private $idMarque;
 
     /**
-     * @return \Marque
+     * @return Marque
      */
-    public function getIdMarque(): \Marque
+    public function getIdMarque(): Marque
     {
         return $this->idMarque;
     }
 
     /**
-     * @param \Marque $idMarque
+     * @param Marque $idMarque
      */
-    public function setIdMarque(\Marque $idMarque): void
+    public function setIdMarque(Marque $idMarque): void
     {
         $this->idMarque = $idMarque;
     }
 
     /**
-     * @var \Typecarburant
+     * @var Typecarburant
      *
      * @ORM\ManyToOne(targetEntity="Typecarburant")
      * @ORM\JoinColumns({
@@ -377,17 +378,17 @@ class Voiture
     private $idTypeCarburant;
 
     /**
-     * @return \Typecarburant
+     * @return Typecarburant
      */
-    public function getIdTypeCarburant(): \Typecarburant
+    public function getIdTypeCarburant(): Typecarburant
     {
         return $this->idTypeCarburant;
     }
 
     /**
-     * @param \Typecarburant $idTypeCarburant
+     * @param Typecarburant $idTypeCarburant
      */
-    public function setIdTypeCarburant(\Typecarburant $idTypeCarburant): void
+    public function setIdTypeCarburant(Typecarburant $idTypeCarburant): void
     {
         $this->idTypeCarburant = $idTypeCarburant;
     }
@@ -429,6 +430,10 @@ class Voiture
     public function __construct()
     {
         $this->idEquipement = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getEquipementCollection(){
+
     }
 
 }
