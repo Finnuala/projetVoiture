@@ -4,16 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 
-body {
-  padding-top: 54px;
-}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
-}
-
 .carousel-item {
   height: 65vh;
   min-height: 300px;
@@ -26,4 +16,20 @@ body {
 
 .portfolio-item {
   margin-bottom: 30px;
+}
+
+.slideperso {
+
+}
+
+.infovoiture {
+
+}
+
+.infovoiture2 {
+  margin-top: 6%;
+}
+
+#car_table  tr:nth-child(even){
+  background-color: #dddddd;
 }
