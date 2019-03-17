@@ -28,5 +28,39 @@ class Typecarburant
      */
     private $libelle;
 
+    /**
+     * @return int
+     */
+    public function getIdTypeCarburant(): int
+    {
+        return $this->idTypeCarburant;
+    }
+
+    /**
+     * @param int $idTypeCarburant
+     */
+    public function setIdTypeCarburant(int $idTypeCarburant): void
+    {
+        $this->idTypeCarburant = $idTypeCarburant;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * @param null|string $libelle
+     */
+    public function setLibelle(?string $libelle): void
+    {
+        $this->libelle = $libelle;
+    }
+
+    
+
 
 }
