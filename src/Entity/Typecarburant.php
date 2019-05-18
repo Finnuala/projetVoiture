@@ -1,6 +1,6 @@
 <?php
 
-
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,13 +22,6 @@ class Typecarburant
     private $idTypeCarburant;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="libelle", type="string", length=255, nullable=true)
-     */
-    private $libelle;
-
-    /**
      * @return int
      */
     public function getIdTypeCarburant(): int
@@ -36,16 +29,16 @@ class Typecarburant
         return $this->idTypeCarburant;
     }
 
-    /**
-     * @param int $idTypeCarburant
-     */
-    public function setIdTypeCarburant(int $idTypeCarburant): void
-    {
-        $this->idTypeCarburant = $idTypeCarburant;
-    }
 
     /**
-     * @return null|string
+     * @var string|null
+     *
+     * @ORM\Column(name="libelle", type="string", length=255, nullable=true)
+     */
+    private $libelle;
+
+    /**
+     * @return string|null
      */
     public function getLibelle(): ?string
     {
@@ -53,14 +46,13 @@ class Typecarburant
     }
 
     /**
-     * @param null|string $libelle
+     * @param string|null $libelle
      */
     public function setLibelle(?string $libelle): void
     {
         $this->libelle = $libelle;
     }
 
-    
 
 
 }

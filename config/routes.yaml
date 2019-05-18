@@ -1,3 +1,10 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+ficheProduit:
+    path: /product
+    controller: App\Controller\VoitureController::show
+
+recherche:
+    path: /recherche
+    controller: App\Controller\RechercheController::show
