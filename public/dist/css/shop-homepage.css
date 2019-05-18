@@ -5,11 +5,22 @@
  */
 
 body {
-  padding-top: 59px;
+  padding-top: 2px;
 }
 
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
   }
+}
+
+select {
+  width: 50%;
+}
+
+button {
+  width: 100%;
+}
+.list-group {
+
 }
