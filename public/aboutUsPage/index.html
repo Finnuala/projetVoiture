@@ -21,6 +21,28 @@
 
   </head>
 
+  <script type="text/javascript">
+    var sizeTheOverlays = function() {
+      $(".overlay").resize().each(function() {
+        var h = $(this).parent().outerHeight();
+        var w = $(this).parent().outerWidth();
+        $(this).css("height", h);
+        $(this).css("width", w);
+      });
+    };
+
+    sizeTheOverlays();
+
+
+    var width = $(window).width();
+    $(window).resize(function(){
+      if($(this).width() != width){
+        width = $(this).width();
+        sizeTheOverlays();
+      }
+    });
+  </script>
+
   <body id="page-top">
 
     <!-- Navigation -->
@@ -56,7 +78,7 @@
     </header>
 
     <section id="about">
-      <div class="container">
+      <div class="containerBody">
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>A propos de "Nom de la société"</h2>
@@ -67,19 +89,54 @@
       </div>
     </section>
 
-    <section id="bio_ethanol" class="bg-light">
-      <div class="container">
+    <section id="infos" class="bg-light">
+      <div class="containerBody">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Rouler au bio-éthanol c'est le choix de l'économie et de l'écologie.</h2>
-          </div>
-          <div class="col-lg-9">
-            <div class="col-lg-4 col-md-2 col-sm-6 col-xs-12">
-              <div class="hovereffect">
-                <img class="img-responsive" src="../dist/img/e85.png" alt="">
+          <div class="col-lg-3 offset-0">
+            <div class="panel panel-default">
+              <div class="panel-body">
                 <div class="overlay">
-                  <p></p>
-                  <h2>60 à 70 cts/litre.<br><br>Un carburant moins polluant.<br><br>Des stations E85 partout en France.</h2>
+                  <box>60 à 70 cts/litre.<br><br>Un carburant moins polluant.<br><br>Des stations E85 partout en France.</box>
+                </div>
+                <div class="text">
+                  <h2><strong>Rouler au bio-éthanol c'est le choix de l'économie et de l'écologie.</strong></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 offset-0">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="overlay">
+                  <box>Depuis le 1er janvier 2018, la prime à la conversion des véhicules est accessible à tous : les Français qui veulent changer un vieux véhicule polluant pour une voiture plus propre, neuve ou d’occasion, peuvent désormais bénéficier d’une aide de 1000 à 2000 euros.</box>
+                </div>
+                <div class="text">
+                  <h2><strong>Prime à la conversion de 1000 € à 2000 €.</strong></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 offset-0">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="overlay">
+                  <box>Le système de conversion Biomotors E85 est un boitier électronique placé dans le compartiment moteur du véhicule, vous permettant d'utiliser dans votre réservoir d'origine aussi bien de l'essence traditionnelle (SP95, SP98, et SP95-E10), que du Superéthanol E85.<br><br>Un carburant moins polluant.<br><br>Des stations E85 partout en France.<br><br>Système de conversion E85 Biomotors pour injection directe et indirecte<br>- Garantie 3 ans<br>- Conçu, développé et Fabriqué en France<br>- Un démarrage à froid du premier coup, grâce à la sonde de température du boîtier<br>- Aucun voyant défaut au compteur, grâce au respect des normes constructeur<br>- Une installation fiable et discrète, grâce à son ergonomie<br>- Le boîtier reconnait avec exactitude et en temps réel la composition du carburant utilisé (100% E85, 100% essence ou mélange des deux)<br>- Système exclusif Biomotors. Breveté depuis 2015</box>
+                </div>
+                <div class="text">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                  <h2><strong>Comment ça marche ?</strong></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 offset-0">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="overlay">
+                  <box>Garantie professionnelle : Nom de la société garantie votre véhicule de 3 mois à 1 an.</box>
+                </div>
+                <div class="text">
+                  <h2><strong>2 garanties valent mieux qu’une.</strong></h2>
                 </div>
               </div>
             </div>
@@ -88,40 +145,19 @@
       </div>
     </section>
 
-    <section id="prime">
-      <div class="container">
+    <section id="cg">
+      <div class="containerBody">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Prime à la conversion de 1000 € à 2000 €."</h2>
-            <p class="lead">Depuis le 1er janvier 2018, la prime à la conversion des véhicules est accessible à tous : les Français qui veulent changer un vieux véhicule polluant pour une voiture plus propre, neuve ou d’occasion, peuvent désormais bénéficier d’une aide de 1000 à 2000 euros.</p>
+            <h2>L’économie sur l’établissement de la carte grise</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="ccm" class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Comment ça marche?</h2>
-          </div>
-          <div class="col-lg-9">
-            <div class="col-lg-4 col-md-2 col-sm-6 col-xs-12">
-              <div class="hovereffect">
-                <img class="img-responsive" src="../dist/img/e85.png" alt="">
-                <div class="overlay">
-                  <p></p>
-                  <h2>Le système de conversion Biomotors E85 est un boitier électronique placé dans le compartiment moteur du véhicule, vous permettant d'utiliser dans votre réservoir d'origine aussi bien de l'essence traditionnelle (SP95, SP98, et SP95-E10), que du Superéthanol E85.<br><br>Un carburant moins polluant.<br><br>Des stations E85 partout en France.</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
+    <section id="contact" class="bg-light">
+      <div class="containerBody">
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>Nous contacter</h2>
